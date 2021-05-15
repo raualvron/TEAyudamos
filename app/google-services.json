@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "116803327115",
+    "firebase_url": "https://teayudamos-fffea-default-rtdb.firebaseio.com",
+    "project_id": "teayudamos-fffea",
+    "storage_bucket": "teayudamos-fffea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116803327115:android:de7f236ca48ac6994df08e",
+        "android_client_info": {
+          "package_name": "com.example.teayudamos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116803327115-r0daa9mgjfjg0u0fs8jc2qikg9e2iup7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaU_z85LAe94RoTjbyoVSC2XnRXYVGvxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "116803327115-r0daa9mgjfjg0u0fs8jc2qikg9e2iup7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
