@@ -40,7 +40,7 @@ public class LocationAdapter extends ArrayAdapter<Location> {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
 
-        TextView tvAction = (TextView) convertView.findViewById(R.id.action);
+        //TextView tvAction = (TextView) convertView.findViewById(R.id.action);
         TextView tvDatetime = (TextView) convertView.findViewById(R.id.datetime);
         TextView tvRoad = (TextView) convertView.findViewById(R.id.road);
         CardView tvCard = (CardView) convertView.findViewById(R.id.card);
@@ -51,7 +51,7 @@ public class LocationAdapter extends ArrayAdapter<Location> {
             tvCard.setBackgroundColor(Color.parseColor("#264653"));
         }
 
-        tvAction.setText(action);
+        //tvAction.setText(action);
         tvDatetime.setText(datetime);
         tvRoad.setText(road);
         return convertView;

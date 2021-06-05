@@ -232,6 +232,7 @@ public class Registration extends AppCompatActivity {
         alumn.put("telephone", txtTelephone.getText().toString());
         alumn.put("parents", Arrays.asList(parents));
         alumn.put("userId", uid);
+        alumn.put("requested",  Calendar.getInstance().getTimeInMillis());
 
         getTokenDevice(alumn);
     }

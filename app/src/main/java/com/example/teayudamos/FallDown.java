@@ -20,8 +20,6 @@ import java.text.DecimalFormat;
 
 public class FallDown extends AppCompatActivity {
 
-    private SensorManager sensorManager;
-    private Sensor accelerometer;
 
     @Override
     public final void onCreate(Bundle savedInstanceState) {

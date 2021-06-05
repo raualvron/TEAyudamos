@@ -58,15 +58,18 @@ public class LoginAlumn extends AppCompatActivity {
         intent.finishActivity();
     }
 
-    private void loadSharedPref(Map<String, Object> data) {
+    private void loadSharedPref(Map<String, Object> data, String documentId) {
         String name = data.get("name").toString();
         String userId = data.get("userId").toString();
         String token = data.get("token").toString();
+        String telephone = data.get("telephone").toString();
 
         sharePref.setSharedPrefBoolean(Constants.LOGGED, true);
         sharePref.setSharedPrefString(Constants.ALUMN, name);
         sharePref.setSharedPrefString(Constants.USER_ID, userId);
         sharePref.setSharedPrefString(Constants.TOKEN, token);
+        sharePref.setSharedPrefString(Constants.TELEPHONE, telephone);
+        sharePref.setSharedPrefString(Constants.DOCUMENT_ID, documentId);
 
         goToFallDownActivity();
     }
@@ -91,7 +94,7 @@ public class LoginAlumn extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Map<String, Object> data = document.getData();
-                                    loadSharedPref(data);
+                                    loadSharedPref(data, document.getId());
                                 }
                             }
                         }

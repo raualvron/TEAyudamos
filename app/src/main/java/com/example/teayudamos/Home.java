@@ -1,5 +1,6 @@
 package com.example.teayudamos;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -10,29 +11,19 @@ import android.widget.TextView;
 import com.example.teayudamos.services.Constants;
 import com.example.teayudamos.services.IntentActivity;
 import com.example.teayudamos.services.SharePref;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.w3c.dom.Text;
+
+import java.util.HashMap;
 
 public class Home extends AppCompatActivity {
 
     Button btnRegister, btnLogin, btnLoginAlumn;
     TextView resetPassword;
     SharePref sharePref;
-
-    protected void onResume() {
-        sharePref = new SharePref(getBaseContext());
-
-        isTheUserLogged();
-        super.onResume();
-    }
-
-    @Override
-    protected void onRestart() {
-        sharePref = new SharePref(getBaseContext());
-
-        isTheUserLogged();
-        super.onRestart();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +66,7 @@ public class Home extends AppCompatActivity {
 
 
     }
+
 
     private void goToActivity(Class<?> activityClass, boolean finish) {
         IntentActivity intent = new IntentActivity(Home.this,

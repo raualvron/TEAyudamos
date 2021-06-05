@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.teayudamos.services.Constants;
 import com.example.teayudamos.services.IntentActivity;
 import com.example.teayudamos.services.SharePref;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 
 public class Dashboard extends AppCompatActivity {
@@ -34,6 +35,8 @@ public class Dashboard extends AppCompatActivity {
         //Set Alumn name
         TextView alumn = findViewById(R.id.user);
         alumn.setText(getAlumnName());
+
+        subscribeTopic();
 
         calendar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -59,17 +62,28 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+        profile.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                goToActivity(Profile.class);
+            }
+        });
+
         logout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 sharePref.clearAllSharedPref();
                 IntentActivity intent = new IntentActivity(Dashboard.this,
-                        Login.class);
+                        Home.class);
                 intent.startActivity();
                 intent.finishActivity();
 
             }
         });
     }
+
+    private void subscribeTopic() {
+        FirebaseMessaging.getInstance().subscribeToTopic(sharePref.getSharedPrefString(Constants.USER_ID));
+    }
+
 
     private void goToActivity(Class activityClass) {
         IntentActivity intent = new IntentActivity(Dashboard.this,

@@ -106,13 +106,15 @@ public class Login extends AppCompatActivity {
         intent.finishActivity();
     }
 
-    private void loadSharedPref(Map<String, Object> data) {
+    private void loadSharedPref(Map<String, Object> data, String documentId) {
         String name = data.get("name").toString();
         String userId = data.get("userId").toString();
 
         sharePref.setSharedPrefBoolean(Constants.LOGGED, true);
         sharePref.setSharedPrefString(Constants.ALUMN, name);
         sharePref.setSharedPrefString(Constants.USER_ID, userId);
+        sharePref.setSharedPrefString(Constants.DOCUMENT_ID, documentId);
+        sharePref.setSharedPrefString("email", txtUsername.getText().toString());
 
         Login.this.goToDashboard();
     }
@@ -126,7 +128,7 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> data = document.getData();
-                                Login.this.loadSharedPref(data);
+                                Login.this.loadSharedPref(data, document.getId());
                             }
                         }
                     }
