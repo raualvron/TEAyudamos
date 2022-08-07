@@ -1,5 +1,5 @@
 # Project
-System for monitoring, analysis and tracking for people with autism spectrum disorders. Proyecto fin de master para la universidad Pablo de Olavide
+System for monitoring, analysis and tracking for people with autism spectrum disorders. Master's thesis for the University Pablo de Olavide
 
 <img src="https://i.imgur.com/yjoZ1nh.png" width="500">
 
